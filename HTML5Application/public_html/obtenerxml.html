@@ -3,34 +3,12 @@
 <head>
 	<title>obtener xml</title>
 	<script type="text/javascript" src="js/XHR.js"></script>
-	
+        <link href="css/style_fileds.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+        <script src="js/obtenerxml.js" type="text/javascript"></script>
 </head>
-<body onload="validar()">
-<div id="showxml"> </div>
-<script type="text/javascript">
-        //creamos una variable que contenga el objeto xhr
-	var peticion;
-	peticion = Obtenerxhr();
-        //hacemos la peticion por get al xml de manera asincrona
-	peticion.open("GET", "xml/frases.xml", true);
-        //validamos si la petión puede ser procesada
-	peticion.onreadystatechange = validar;
-        //enviamos la petición
-	peticion.send(null);
-	
-	function validar(){
-		if(peticion.readyState === 4){
-			if(peticion.status === 200){
-				xmldoc = peticion.responseXML;
-				x=xmldoc.getElementsByTagName("frases");
-				i = 0;
-				content = (x[i].getElementsByTagName("contenido")[0].childNodes[0].nodeValue);
-				
-				txt = "contenido: " + content;
-				document.getElementById("showxml").innerHTML = txt;
-			}
-		}
-	}
-	</script>
+<body>
+    <p></p>
+    
 </body>
 </html>
