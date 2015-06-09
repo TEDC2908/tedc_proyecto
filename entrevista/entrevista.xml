@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<entrevista>
+	<pregunta nivel="11" frase="Una - - - - - - inspiro a Newton" palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja o amarilla"/>
+	<pregunta nivel="12" frase=" " palabra="mamey" palabraSeparada="m,a,m,e,y" ayuda="Fruta roja"/>
+	<pregunta nivel="13" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
+	<pregunta nivel="14" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
+	<pregunta nivel="15" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
+</entrevista>
