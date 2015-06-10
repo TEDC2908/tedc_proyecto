@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <entrevista>
 	<pregunta nivel="11" frase="Una - - - - - - inspiro a Newton" palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja o amarilla"/>
-	<pregunta nivel="12" frase=" " palabra="mamey" palabraSeparada="m,a,m,e,y" ayuda="Fruta roja"/>
-	<pregunta nivel="13" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
-	<pregunta nivel="14" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
-	<pregunta nivel="15" frase=" " palabra="manzana" palabraSeparada="m,a,n,z,a,n,a" ayuda="Fruta roja"/>
+	<pregunta nivel="12" frase="El ----- es originario de México" palabra="mamey" palabraSeparada="m,a,m,e,y" ayuda="Tiene pulpa color naranja"/>
+	<pregunta nivel="13" frase="La --------- tambien conocida como zarza" palabra="zarzamora" palabraSeparada="z,a,r,z,a,m,o,r,a" ayuda="Fruto pequeño parecido a la frambuesa"/>
+	<pregunta nivel="14" frase="La --- viene en racimos" palabra="uva" palabraSeparada="u,v,a" ayuda="Son pequeñas y dulces"/>
+	<pregunta nivel="15" frase="El ---- es tambien un ave " palabra="kiwi" palabraSeparada="k,i,w,i" ayuda="También se le conoce como quiui"/>
 </entrevista>
