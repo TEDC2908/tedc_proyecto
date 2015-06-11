@@ -2,6 +2,7 @@ var numAleatorio = Math.floor(Math.random() * (5)) + 1;
 var longPalabra=0;
 var contadorPalabras = 0;
 var equivocaciones=0;
+var numeroPalabras=5;
 
 $(document).ready(principal(numAleatorio));
 
@@ -27,7 +28,7 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 				$("#frase").append("<p>"+$(this).attr('frase')+"</p>");
 				//Creamos los input text deacuerdo al numero de letras de la palabra
 				for(i = 0;i < longPalabra; i++){
-					$("#letras-palabra").append('<input id='+i+' type=text size=1>');
+					$("#letras-palabra").append('<input id='+i+' type=text size=1 class="inputcentrado">');
 				}
 				//$(':input:enabled:visible:first').focus();
 				$("#mostrarAyuda").click(function(){
@@ -46,10 +47,15 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 				//Disparamos un evento si se teclea algo dentro de los input text
 				inputLetra.keypress(function (e){
 					//console.log($(this).attr('id'));
-					//Con el sigueinte if validamos la letra y el input text donde se escribio
+					//Con el sigueinte if vali8damos la letra y el input text donde se escribio
+						if(e.which == 13 || e.which == 8 || e.which == 32 ){
+							console.log("Se pulso una tecla nula");
+							return false;
+						}
 							if(String.fromCharCode(e.which) == palabraSeparada[$(this).attr("id")] && textFocus == $(this).attr("id")){
 							//Si es correcta la letra hacemos lo siguiente:
 							$("#mensajesSistema").html("<p>Correcto</p>")
+							$(this).addClass("inputColorVerde")
 							$(this).val(String.fromCharCode(e.which));
 							$(this).prop('disabled',true);
 							if($(this).attr('id') != longPalabra-1){
@@ -69,6 +75,7 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 
 							}else{
 							//Si es incorrecta, lo siguiente:
+							$(this).addClass("inputColorRojo");
 							if(errores >1 ){ //Verifiamos si aun le quedan intentos
 								$("#mensajesSistema").html("<p>Vuelve a intentar</p>");
 								$(this).val('');
@@ -99,14 +106,24 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 
 										
 				});
-				if(contadorPalabras ==2){
+				if(contadorPalabras ==numeroPalabras){
 					$("#frase").hide();
 					$("#letras-palabra").hide();
 					$("#mensajesSistema").hide();
 					$("#intentos").hide();
 					$("#mostrarAyuda").hide();
+					$("#resultados").append("<p>De :"+contadorPalabras+" contestadas</p>")
 					$("#resultados").append("<p>Cometitaste "+equivocaciones+" equivocaciones</p>");
-					$("#resultados").append("<p>Tu calificacion es: </p>");
+					var calificacion = ((contadorPalabras-equivocaciones)*10)/contadorPalabras;
+					$("#resultados").append("<p>Tu calificacion es: "+calificacion+"</p>");
+					$("#resultados").append('<input type="button" value="Terminar" class="boton" id="terminar">');
+					$("#terminar").click(function (){
+						$("#resultados").html("<h3>Gracias por su visita</h3>");
+					});
+					$("#resultados").append('<input type="button" value="Regresar" class="boton" id="regresar">');
+					$("#regresar").click(function (){
+						location.reload();
+					});
 				}
 
 			}
@@ -117,5 +134,5 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 	}
 });
 
-
+	
 }

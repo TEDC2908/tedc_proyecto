@@ -2,21 +2,29 @@
 <html>
 <head>
 	<title>Entrevista</title>
+	<meta charset="UTF-8">
 	<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="funciones.js"></script>
+	<link rel="stylesheet" type="text/css" href="entrevista.css">
 </head>
 <body>
-	<div id="frase">
-		
+	<div>
+		<center><h4>Universidad Nacional Autónoma de México</h4></center>
+		<center><h5>Facultad De Estudios Superiores Aragón </h5></center>
+		<center><h5>Ingenieria en Computación </h5></center>
+		<center><h5>Completa las letras faltantes para formar la palabra que falta en la frase </h5></center>
+		<div class="inLine"><img src="Escudo-UNAM.png" width="200" height="200"></div>
+		<div class="inLine aLaDerecha"><img src="fesAragon.png" width="200" height="200"></div>	
 	</div>
-	<div id="letras-palabra">
-
+	<div clas="page">
+		<div class="centrar" align="center">
+			<div id="frase"></div>
+			<div id="letras-palabra"></div>
+			<div id="mensajesSistema"></div>
+			<div id="intentos"></div>
+			<div> <input type="button" id="mostrarAyuda" value="Ayuda!" class="boton"> </div>
+			<div id="resultados"></div>
+		</div>
 	</div>
-	<div id="mensajesSistema">
-		
-	</div>
-	<div id="intentos"></div>
-	<div> <input type="button" id="mostrarAyuda" value="Ayuda!"> </div>
-	<div id="resultados"></div>
 </body>
 </html>
