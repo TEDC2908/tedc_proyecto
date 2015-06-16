@@ -20,12 +20,33 @@ $.ajax({ // Con la funcion ajax cargamos el XML
 			//Como ejemplo utilizamos el nivel 1-1, luego se hara aleatoriamente
 			
 			console.log(numeroAle);
-			if(pregunta == "1"+numeroAle){
-				longPalabra = $(this).attr('palabra').length;
-				var palabraSeparada = $(this).attr('palabraSeparada').split(",");
+			if(pregunta == "1"+numAleatorio){
+				var frase = $(this).attr('frase');
+				fraseSeparada = frase.split(" ");
+				console.log(fraseSeparada);
+				var longFrase = fraseSeparada.length;
+				var indicePalabra = Math.floor(Math.random() * (longFrase)) + 1;
+				console.log("Se elegio el indice: "+indicePalabra);
+				var palabraElegida = fraseSeparada[indicePalabra-1];
+				console.log("El indice corresponde a: "+palabraElegida);
+				longPalabra = palabraElegida.length;
+				var palabraSeparada = palabraElegida.split("");
+				console.log(palabraSeparada);
 				var ayuda = $(this).attr('ayuda');
-				//console.log(palabraSeparada);
-				$("#frase").append("<p>"+$(this).attr('frase')+"</p>");
+				//console.log(fraseSeparada[0]);
+				var fraseAMostrar = "";
+				var palabraAMostrar;
+				var palabraOculta = "-------";
+				for(a = 0;a<=longFrase-1;a++){
+					if(palabraElegida == fraseSeparada[a]){
+						palabraAMostrar = palabraOculta;
+					}else{
+						palabraAMostrar = fraseSeparada[a];
+					}
+					fraseAMostrar += " "+palabraAMostrar;
+				}
+				console.log(fraseAMostrar);
+				$("#frase").append("<p>"+fraseAMostrar+"</p>");
 				//Creamos los input text deacuerdo al numero de letras de la palabra
 				for(i = 0;i < longPalabra; i++){
 					$("#letras-palabra").append('<input id='+i+' type=text size=1 class="inputcentrado">');
